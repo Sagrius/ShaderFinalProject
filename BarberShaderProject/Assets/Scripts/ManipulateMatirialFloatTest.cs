@@ -7,8 +7,7 @@ public class ManipulateMatirialFloatTest : MonoBehaviour
 
    
     public GameObject testeSphere;
-    public Material instanceMaterial; 
-    public RaycastHit hitInfo;
+    public Material instanceMaterial;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +23,8 @@ public class ManipulateMatirialFloatTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            RaycastHit hithit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hithit, 100))
+            if (Physics.Raycast(ray, out var hithit, 100f))
             {
                 print("Hit something! " + hithit.collider.name);
 
