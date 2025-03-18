@@ -374,7 +374,7 @@ Transform:
   m_GameObject: {fileID: 919305756}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10.648}
+  m_LocalPosition: {x: 0, y: 1, z: -14.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -540,12 +540,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1484020902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2210d5143e477f046bbedb9225e73b6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 131548c8e396db543a0d940f8797576a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _drawShader: {fileID: 4800000, guid: ea46b22677e2c20478fd710d9f04c13a, type: 3}
-  size: 6
-  strength: 1
+  _drawShader: {fileID: -6465566751694194690, guid: 984b4831fc821e143a2e6a827936eb22, type: 3}
+  brushTexture: {fileID: 2800000, guid: 90ded0611e490aa4ba6961afbfc2280d, type: 3}
+  size: 1
+  strength: 0.072
 --- !u!1 &1764862140
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,6 +664,7 @@ GameObject:
   - component: {fileID: 1797370369}
   - component: {fileID: 1797370368}
   - component: {fileID: 1797370367}
+  - component: {fileID: 1797370371}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -756,6 +758,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797370371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797370366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2210d5143e477f046bbedb9225e73b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drawShader: {fileID: 4800000, guid: ea46b22677e2c20478fd710d9f04c13a, type: 3}
+  size: 13
+  strength: 0.101
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManipulateMatirialFloatTest : MonoBehaviour
+public class PaintScript2 : MonoBehaviour
 {
 
    
@@ -13,7 +13,7 @@ public class ManipulateMatirialFloatTest : MonoBehaviour
     [SerializeField] private Shader _drawShader;
     private RenderTexture splatMap;
     private Material _drawMaterial, _currentMaterial;
-
+    [SerializeField] Texture2D brushTexture;
     [SerializeField] [Range(1, 500)] private float size;
     [SerializeField] [Range(0,1)] private float strength;
 
@@ -23,10 +23,11 @@ public class ManipulateMatirialFloatTest : MonoBehaviour
     {
         _drawMaterial = new Material(_drawShader);
         _drawMaterial.SetVector("_Color", Color.red);
+        _drawMaterial.SetTexture("_BrushTex", brushTexture);
         _currentMaterial = GetComponent<Renderer>().material;
        
         splatMap = new RenderTexture(1024, 1024, 0, RenderTextureFormat.ARGBFloat);
-        _currentMaterial.SetTexture("_SplatMap", splatMap);
+        _currentMaterial.SetTexture("_MainTex", splatMap);
 
 
 
@@ -50,9 +51,8 @@ public class ManipulateMatirialFloatTest : MonoBehaviour
                 print("Hit something! " + hithit.collider.name);
                 // hithit.collider.gameObject.GetComponent<Renderer>().material.SetVector("_HitLocation", hithit.point);
 
-                _drawMaterial.SetVector("_Coordinates", new Vector4(hithit.textureCoord.x, hithit.textureCoord.y, 0, 0));
-                _drawMaterial.SetFloat("_Strength", strength);
-                _drawMaterial.SetFloat("_Size", size);
+                _drawMaterial.SetVector("_BrushUV", hithit.textureCoord); // Passing the UV coordinates
+                _drawMaterial.SetFloat("_BrushSize", size); // Passing the brush size
 
 
                 RenderTexture temp = RenderTexture.GetTemporary(splatMap.width,splatMap.height,0,RenderTextureFormat.ARGBFloat);
